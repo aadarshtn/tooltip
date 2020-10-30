@@ -1,13 +1,15 @@
+// PACKAGE IMPORTS
 import React from "react";
 import ReactDOM from "react-dom";
-import thunk from 'redux-thunk';
-import { applyMiddleware, createStore } from "redux";
+import { createStore } from "redux";
+
+// FILE IMPORTS
 import "./index.css";
-import App from "./App";
+import App from "./components/App";
 import reducer from './reducers';
 
-
-const store = createStore(reducer,applyMiddleware(thunk));
+// CREATING STORE WITH IMPORTED REDUCER FILE
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>

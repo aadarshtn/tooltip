@@ -1,21 +1,27 @@
+// PACKAGE IMPORTS
 import React from "react";
+
+// COMPONENTS & FILE SPECIFIC IMPORTS
 import Tooltip from "./Tooltip";
-import { setShowTooltip, setTooltipPosition } from "./actions";
+import { setShowTooltip, setTooltipPosition } from "../actions";
 
 class App extends React.Component {
 
+  // Function to handle display and not display tooltip according to mouseOver
   handleMouseHover = (val) => {
     const { dispatch } = this.props.store;
     this.unsubscribe = this.props.store.subscribe(() => this.forceUpdate());
     dispatch(setShowTooltip(val));
   };
 
+  // Function to handle position of tooltip with an onClick event on radio buttons in a form in the UI
   handlePositionSelection = (val) => {
     const { dispatch } = this.props.store;
     this.unsubscribe = this.props.store.subscribe(() => this.forceUpdate());
     dispatch(setTooltipPosition(val));
   }
 
+  // General App rendering function
   render() {
     const { showToolTip, value } = this.props.store.getState();
     
@@ -41,6 +47,7 @@ class App extends React.Component {
         >
           HOVER
         </button>
+        {/* Giving state values showToolTip and value as props to Tooltip Component */}
         <Tooltip showToolTip={showToolTip} value={value} />
         </div>
       </div>

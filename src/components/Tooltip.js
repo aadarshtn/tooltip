@@ -1,6 +1,8 @@
 import React from "react";
 
 class Tooltip extends React.Component {
+
+  // General tooltip rendering function
   render() {
     const { showToolTip, value } = this.props;
     console.log("showToolTip::", showToolTip);
@@ -27,27 +29,6 @@ class Tooltip extends React.Component {
             <div className="tooltip-arrow"></div>
             <div className="tooltip-label">Tooltip</div>
           </div>
-          {/* <div
-          className={`${value === "right" ? "right" : ""}`}
-          id="tooltip"
-        >
-          <div className="tooltip-arrow"></div>
-          <div className="tooltip-label">Tooltip Position : RIGHT</div>
-        </div>
-        <div
-          className={`${value === "top" ? "top" : ""}`}
-          id="tooltip"
-        >
-          <div className="tooltip-arrow"></div>
-          <div className="tooltip-label">Tooltip Position : TOP</div>
-        </div>
-        <div
-          className={`${value === "bottom" ? "bottom" : ""}`}
-          id="tooltip"
-        >
-          <div className="tooltip-arrow"></div>
-          <div className="tooltip-label">Tooltip Position : BOTTOM</div>
-        </div> */}
         </div>
       );
     }
